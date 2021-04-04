@@ -1,3 +1,6 @@
+// This is the script to create all the tables for the database, coded in Oracle Live SQL
+
+
 INSERT INTO PLAYER VALUES (0003, 'AN NGUYEN', '21-08-1997') 
 
 ;

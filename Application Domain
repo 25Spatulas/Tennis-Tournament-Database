@@ -1,0 +1,17 @@
+// This is the Application Domain, which is a document that explains how the database works in words, laying out the foundatations and business rules to simulate the real world
+// as closely as possible.
+
+Connecticut Boys Tennis (CBT) is an organization that helps create a competitive scene for high school tennis teams. CBT hosts tournaments all around the state that allows a large 
+  range of high school students to compete with one another. In order to keep the competitive spirit, CBT must record every tournament that is hosted and played through. 
+  Each tournament recorded is given a unique id, name, and the location the tournament was held. For a student, in a participating school, to join the CBT they must go through 
+  registration to compete in tournaments. To register, each student must give their first and last name, and date of birth. In return, each student that registers will 
+  be given their own registration ticket, which will include a unique id for their registration ticket, the date of registration, and a unique player ID. 
+  To easily find which player is competing in which tournament, registration also keeps track of all the tournaments each player plays in, their registration ID, 
+  and the seed they are in each tournament. To ensure no discrepancies will be made, CBT will keep track of all the matches played for each tournament. 
+  Each match has its own unique ID, the tournament that the match is being played in, the registration ID of the person playing on the first side of the court, 
+  the registration ID of the player on the second side (other side) of the court, and the number of sets that were played during the match. 
+  CBT records both games and sets played to clear up any confusion had before or after the match happens. Each set is identified by its respective Match ID, 
+  Tournament ID, the set number, and the number of games each person has won for the set. 
+  For each game, CBT will keep track of the Match ID, Tournament ID, set number, game number, and the scores for both players playing the match. 
+  Finally, CBT will keep track of the winner of each match. Each player that wins a match will have the corresponding Match ID of the match they won, 
+  the Tournament ID that corresponds to the tournament the match was in, and their Registration ID. 

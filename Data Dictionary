@@ -1,0 +1,71 @@
+// This is the data dictionary of the database. This defines all the entities and attributes of said entities in this document.
+
+PLAYER – A player is a student from a qualifying high school that has enrolled into the CBT program. A player is put into a waiting pool, and then from there CBT can register players into tournaments as they are made throughout the seasons.
+
+  PLAYERID – A variable-length character string that uniquely identifies a player that is enrolled in the CBT program. 
+    Every player must have a corresponding PlayerID.
+  
+  PNAME – A variable-length character string that represents the first and last names of the players. 
+    Players must at least put their first/name but are not obligated to include their last name if they do not have a last name and must be a max of 24 characters.
+  
+  DOB – A fixed-length character string representing the date of birth of the player. This string has a length of 10 and takes the form of ‘dd-mm-yyyy’. 
+    It is possible that CBT might not have a date of birth on record for every player registered into the program.
+
+
+REGISTRATION – Registration is the process of getting players in the waiting pool into tournaments that they can compete in.  
+
+  REGID – A variable-length integer that uniquely identifies an instance of registration to a tournament. 
+    This variable length integer can be up to a max of 3 characters, and every player that registers must have a corresponding Registration ID.
+ 
+  REGDATE – A fixed-length character string that represents the date of registration for each player. 
+    It is entirely possible that CBT may not have registration dates for all players registered for tournaments.
+
+
+PLAYINGIN – Playing in is what connects registration to tournaments, showing the tournament that the player is playing in, the registration id of the player.
+
+  SEED – A fixed-length number of 1 that determines the placement of the players in tournament. 
+    As this number is not automatically generated, organizers of the tournament must decide which player falls under which seed based off previous performances. 
+    For an instance of a tournament, 2 players cannot have the same seed as the seed is basically a ranking system for a tournament before the 
+    tournament starts, and every player that is playing in a tournament must have a corresponding seed.
+
+
+TOURNAMENT – A CBT tournament is a single elimination tournament held for players to compete in. 
+  These tournaments will have 8 competitors each and only the winners of matches move on in the bracket.
+  
+  TID – A variable-length integer that uniquely identifies an instance of a tournament, and this integer can be a max of 2 integers. 
+    It is crucial that every tournament has a Tournament ID associated to it. 
+  
+  NAME – A variable-length character string that represents the name given to the tournament. Every tournament must have a name that corresponds to it.
+  
+  LOCATION – A variable-length character string that represents the location that the tournament is hosted at, and Every tournament must have a corresponding location.
+
+
+MATCH – A match consists of a sequences of sets, which for all of these tournaments will be a best of 3. 
+  This means that the first player to win 2 sets will win the match overall.
+
+  MATCHID – A fixed-length number of length 3 that uniquely identifies an instance of a match in a tournament. Every match must have a corresponding match ID. 
+
+  ROUNDS – A fixed-length number of length 1 that indicates how many sets were played in the match. Every match must have a corresponding number of rounds.
+
+
+SET – A set consists of a sequence of games with the server alternating every 2 games, and for these tournaments the player that either wins 3 games will win the set, or if both players have won 2 games each, whoever wins 4 games will win the set.
+  
+  SETNUM – A fixed-length number that represents the set number of the match, and every set must have a corresponding set number.
+
+  P1GAMES – A fixed-length integer that represents the number of games player 1 has won. If the set is complete, then it is necessary to have a 
+    corresponding number that shows how many games player 1 has won. On the other hand, if the set is still in progress, it is not mandatory for p1Games to have a valid entry.
+    
+  P2GAMES - A fixed-length integer that represents the number of games player 2 has won. If the set is complete, then it is necessary to have a 
+    corresponding number that shows how many games player 2 has won. On the other hand, if the set is still in progress, it is not mandatory for p2Games to have a valid entry.
+    
+    
+GAME – A game is a sequence of points in which one player wins when either they win 4 points, or in the case where both players have won 3 points, 
+  a player wins when they win at least 2 more points than the other player.
+
+  GAMENUM – A fixed-length integer that represents the game number of the set. Every game must have a corresponding game number, whether the game is finished or is in progress.
+
+  P1SCORE - A fixed-length integer that represents the number of points player 2 has won. If the game is complete, then it is necessary to have a 
+    corresponding number that shows how many points player 2 has won. On the other hand, if the game is still in progress, it is not mandatory for p2Score to have a valid entry.
+  
+  P2SCORE - A fixed-length integer that represents the number of points player 1 has won. If the game is complete, then it is necessary to have a 
+    corresponding number that shows how many points player 1 has won. On the other hand, if the game is still in progress, it is not mandatory for p1Score to have a valid entry.
